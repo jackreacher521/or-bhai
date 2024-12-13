@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oye Bhai</title>
+    <title>IND Warriors</title>
     <style>
+        /* General Styles */
         body {
             margin: 0;
             padding: 0;
@@ -12,20 +13,124 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Scorpio_at_the_2014_Geneva_Motor_Show.jpg/1200px-Scorpio_at_the_2014_Geneva_Motor_Show.jpg') no-repeat center center/cover;
-            font-family: Arial, sans-serif;
-            color: white;
-            text-shadow: 2px 2px 5px black;
+            background: linear-gradient(120deg, #000428, #004e92);
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
         }
+
         h1 {
-            font-size: 3rem;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 10px 20px;
-            border-radius: 10px;
+            position: relative;
+            font-size: 5rem;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            animation: glow 1.5s infinite alternate;
+            z-index: 1;
+        }
+
+        /* Glitch Effect */
+        h1::before,
+        h1::after {
+            content: "IND Warriors";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: #00ffcc;
+            background: transparent;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 10%, 0 10%);
+            animation: glitch 2s infinite ease-in-out;
+        }
+
+        h1::after {
+            color: #ff0066;
+            clip-path: polygon(0 90%, 100% 90%, 100% 100%, 0 100%);
+            animation-delay: 0.5s;
+        }
+
+        /* Animation Effects */
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+            }
+            100% {
+                text-shadow: 0 0 20px #ff0066, 0 0 40px #ff0066, 0 0 60px #ff0066;
+            }
+        }
+
+        @keyframes glitch {
+            0% {
+                transform: translate(0);
+            }
+            20% {
+                transform: translate(-2px, -2px);
+            }
+            40% {
+                transform: translate(2px, 2px);
+            }
+            60% {
+                transform: translate(-2px, 2px);
+            }
+            80% {
+                transform: translate(2px, -2px);
+            }
+            100% {
+                transform: translate(0);
+            }
+        }
+
+        /* Animated Background Elements */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float 4s infinite ease-in-out;
+        }
+
+        .circle:nth-child(1) {
+            width: 200px;
+            height: 200px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .circle:nth-child(2) {
+            width: 300px;
+            height: 300px;
+            top: 70%;
+            left: 60%;
+            animation-delay: 1s;
+        }
+
+        .circle:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            top: 50%;
+            left: 30%;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-20px) scale(1.1);
+            }
+            100% {
+                transform: translateY(0) scale(1);
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Or bhai, kya kar raha hai?</h1>
+    <h1>IND Warriors</h1>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
 </body>
 </html>
+
